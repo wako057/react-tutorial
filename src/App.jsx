@@ -12,7 +12,18 @@ function App() {
         setSelectedTopic(selectedButton)
         console.log(selectedTopic);
     }
-
+    let tabContent = <p>Please select a topic.</p>;
+    if (selectedTopic) {
+        tabContent = (
+            <div id="tab-content">
+                <h3>{EXAMPLES[selectedTopic].title}</h3>
+                <p>{EXAMPLES[selectedTopic].description}</p>
+                <pre>
+                    <code>{EXAMPLES[selectedTopic].code}</code>
+                </pre>
+            </div>
+        );
+    }
     console.log('APP COMPONENT EXECUTING');
     return (
         <div>
@@ -41,16 +52,7 @@ function App() {
                             <TabButton onSelect={() => handleSelect('state')} >State</TabButton>
                         {/*<TabButton2 label='Component 2'></TabButton2>*/}
                     </menu>
-                        { !selectedTopic && <p>Please select a topic.</p> }
-                        { selectedTopic && (
-                            <div id="tab-content">
-                                <h3>{EXAMPLES[selectedTopic].title}</h3>
-                                <p>{EXAMPLES[selectedTopic].description}</p>
-                                <pre>
-                                    <code>{EXAMPLES[selectedTopic].code}</code>
-                                </pre>
-                            </div>
-                        )}
+                    {tabContent}
                 </section>
                 <h2>Time to get started!</h2>
             </main>
