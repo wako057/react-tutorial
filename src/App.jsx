@@ -5,8 +5,8 @@ import TabButton from "./components/TabButton/TabButton";
 import TabButton2 from "./components/TabButton/TabButton2";
 
 function App() {
-    function handleSelect() {
-        console.log('Hello World - Selected');
+    function handleSelect(selectedButton) {
+        console.log(selectedButton );
     }
 
     return (
@@ -30,10 +30,10 @@ function App() {
                 <section id="examples">
                     <h2>Example</h2>
                     <menu>
-                            <TabButton onSelect={handleSelect}>Component</TabButton>
-                            <TabButton onSelect={handleSelect}>JSX</TabButton>
-                            <TabButton onSelect={handleSelect}>Props</TabButton>
-                            <TabButton onSelect={handleSelect}>States</TabButton>
+                            <TabButton onSelect={() => handleSelect('component')}>Component</TabButton>
+                            <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
+                            <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
+                            <TabButton onSelect={() => handleSelect('state')} >State</TabButton>
                         {/*<TabButton2 label='Component 2'></TabButton2>*/}
                     </menu>
                 </section>
