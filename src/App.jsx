@@ -3,12 +3,14 @@ import Header from "./components/Header/Header";
 import CoreConcept from "./components/CoreConcept/CoreConcept";
 import TabButton from "./components/TabButton/TabButton";
 import TabButton2 from "./components/TabButton/TabButton2";
+import { useState } from 'react';
 
 function App() {
-    let tabContent = 'Please click a button';
+    const [ selectedTopic, setSelectedTopic ] = useState('Please click a button');
+
     function handleSelect(selectedButton) {
-        tabContent = selectedButton;
-        console.log(tabContent);
+        setSelectedTopic(selectedButton)
+        console.log(selectedTopic);
     }
 
     console.log('APP COMPONENT EXECUTING');
@@ -39,7 +41,7 @@ function App() {
                             <TabButton onSelect={() => handleSelect('state')} >State</TabButton>
                         {/*<TabButton2 label='Component 2'></TabButton2>*/}
                     </menu>
-                    {tabContent}
+                    {selectedTopic}
                 </section>
                 <h2>Time to get started!</h2>
             </main>
