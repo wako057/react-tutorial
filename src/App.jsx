@@ -5,10 +5,13 @@ import TabButton from "./components/TabButton/TabButton";
 import TabButton2 from "./components/TabButton/TabButton2";
 
 function App() {
+    let tabContent = 'Please click a button';
     function handleSelect(selectedButton) {
-        console.log(selectedButton );
+        tabContent = selectedButton;
+        console.log(tabContent);
     }
 
+    console.log('APP COMPONENT EXECUTING');
     return (
         <div>
             <header><h1>Hello World!</h1></header>
@@ -36,6 +39,7 @@ function App() {
                             <TabButton onSelect={() => handleSelect('state')} >State</TabButton>
                         {/*<TabButton2 label='Component 2'></TabButton2>*/}
                     </menu>
+                    {tabContent}
                 </section>
                 <h2>Time to get started!</h2>
             </main>
