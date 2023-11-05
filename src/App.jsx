@@ -26,8 +26,7 @@ function App() {
     }
     console.log('APP COMPONENT EXECUTING');
     return (
-        <div>
-            <header><h1>Hello World!</h1></header>
+        <>
             <Header/>
             <main>
                 <section id="core-concepts">
@@ -49,7 +48,7 @@ function App() {
                 </section>
                 <h2>Time to get started!</h2>
             </main>
-        </div>
+        </>
     );
 }
 
